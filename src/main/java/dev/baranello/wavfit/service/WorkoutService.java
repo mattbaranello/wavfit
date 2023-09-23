@@ -18,16 +18,16 @@ public class WorkoutService {
         return workoutRepository.findAll();
     }
 
-    public Optional<Workout> getWorkoutById(Long id) {
-        return workoutRepository.findById(id);
+    public Optional<Workout> getWorkoutById(Long workoutId) {
+        return workoutRepository.findById(workoutId);
     }
 
     public Workout createWorkout(Workout workout) {
         return workoutRepository.save(workout);
     }
 
-    public Workout updateWorkout(Long id, Workout updatedWorkout) {
-        Optional<Workout> existingWorkoutOptional = workoutRepository.findById(id);
+    public Workout updateWorkout(Long workoutId, Workout updatedWorkout) {
+        Optional<Workout> existingWorkoutOptional = workoutRepository.findById(workoutId);
         if (existingWorkoutOptional.isPresent()) {
             Workout existingWorkout = existingWorkoutOptional.get();
             existingWorkout.setWorkoutName(updatedWorkout.getWorkoutName());
@@ -41,7 +41,7 @@ public class WorkoutService {
         }
     }
 
-    public void deleteWorkout(Long id) {
-        workoutRepository.deleteById(id);
+    public void deleteWorkout(Long workoutId) {
+        workoutRepository.deleteById(workoutId);
     }
 }

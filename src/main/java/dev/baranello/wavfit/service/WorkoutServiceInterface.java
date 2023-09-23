@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface WorkoutServiceInterface {
 
     public Workout saveWorkout(Workout workout);
-    public Optional<Workout> getWorkoutById(Long id);
+    public Optional<Workout> getWorkoutById(Long workoutId);
     List<Workout> getAllWorkout();
-    Workout updateWorkout(Long id, Workout workout);
-    void deleteWorkout(Long id);
+    Workout updateWorkout(Long workoutId, Workout workout);
+    void deleteWorkout(Long workoutId);
 
 }

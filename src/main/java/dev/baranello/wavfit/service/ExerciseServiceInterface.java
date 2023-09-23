@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface ExerciseServiceInterface {
     public Exercise saveWorkout(Exercise exercise);
-    public Optional<Exercise> getExerciseById(Long id);
+    public Optional<Exercise> getExerciseById(Long exerciseId);
     List<Exercise> getAllExercise();
-    Exercise updateExercise(Long id, Exercise exercise);
-    void deleteExercise(Long id);
+    Exercise updateExercise(Long exerciseId, Exercise exercise);
+    void deleteExercise(Long exerciseId);
 }
