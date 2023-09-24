@@ -1,12 +1,30 @@
 import { useState } from "react"
+import AppBar from "./components/AppBar"
 import "./styles.css"
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 export default function App() {
   const [newItem, setNewItem] = useState("")
+  const [workout, setWorkout] = useState([])
+
+  function handleSubmit(e) {
+    e.preventDefault()
+
+    setWorkout([
+      ...workout, 
+      { id: crypto.randomUUID(), title: newItem, complete:
+      false },
+    ])
+  }
+
+  console.log
 
   return (
   <>
-  <form className="new-item-form">
+  <div className="Nav">
+    <AppBar/>
+  </div>
+  <form onSubmit={handleSubmit} className="new-item-form">
     <div className="form-row">
       <label htmlFor="item">New Item</label>
       <input 
